@@ -1,6 +1,6 @@
 {
-  "name": "pig-nation-coins",
-  "version": "0.1.0-beta",
+  "name": "pig-nation-coins-next",
+  "version": "0.2.0-beta",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
