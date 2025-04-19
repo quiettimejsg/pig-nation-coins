@@ -1,0 +1,276 @@
+:root {
+  /* 水墨色调色板 - 主要颜色 */
+  --ink-black: #3d2e24;
+  --paper-white: #f5f0e4;
+  --cinnabar-red: #d14334;
+  --water-blue: #6b8e9c;
+  
+  /* 水墨色调扩展 */
+  --ink-gray: #5e534a;
+  --light-sand: #e8dfd0;
+  --pale-jade: #abb8b3;
+  --deep-pine: #2a473e;
+  --golden-amber: #e6b155;
+
+  /* 功能颜色 */
+  --primary-text: var(--ink-black);
+  --secondary-text: var(--ink-gray);
+  --primary-bg: var(--paper-white);
+  --card-bg: #fffdfa;
+  --nav-bg: rgba(255, 253, 250, 0.95);
+  --nav-shadow: rgba(0, 0, 0, 0.05);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --focus-outline: var(--cinnabar-red);
+  --link-color: var(--cinnabar-red);
+  --link-hover: #b82e20;
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --label-color: rgba(61, 46, 36, 0.7);
+  --scrollbar-track: rgba(0, 0, 0, 0.05);
+  --scrollbar-thumb: rgba(209, 67, 52, 0.15);
+  --scrollbar-thumb-hover: rgba(209, 67, 52, 0.3);
+  
+  /* 背景和毛玻璃效果 */
+  --background-image-desktop: url('/images/background-pc.jpg');
+  --background-image-mobile: url('/images/background-phone.jpeg');
+  --background-opacity: 0.8;
+  --content-bg-color: rgba(255, 255, 255, 0.7);
+  --content-bg-fallback: rgba(255, 255, 255, 0.9);
+  
+  /* UI组件变量 */
+  --card-radius: 12px;
+  --btn-radius: 8px;
+  --input-radius: 8px;
+  
+  /* 间距系统 */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* 按钮尺寸 */
+  --btn-scale: 1;
+  
+  /* 动画参数 */
+  --ripple-duration: 0.6s;
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+  
+  /* 阴影系统 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 毛笔字笔画动画 */
+@keyframes brush-stroke {
+  0% { 
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0); 
+    opacity: 0.6;
+  }
+  100% { 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+    opacity: 1;
+  }
+}
+
+/* 墨水扩散动画 */
+@keyframes ink-spread {
+  0% { transform: scale(0.9); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: scale(1.05); opacity: 0; }
+}
+
+/* 全局按钮样式 */
+.btn {
+  background: var(--cinnabar-red);
+  color: white;
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 12px 24px;
+  font-size: 1.2em;
+  position: relative;
+  transition: all var(--transition-normal) var(--ease-bounce);
+  transform: translate(0, 0);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.btn:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translate(
+    calc(-2px + (var(--mouse-x, 0) * 0.3px)),
+    calc(-2px + (var(--mouse-y, 0) * 0.3px))
+  );
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--ink-black);
+  border-radius: var(--btn-radius);
+  animation: brush-stroke 0.6s var(--ease-out-quart) forwards;
+}
+
+/* 水墨风格二级按钮 */
+.btn-ink {
+  background: transparent;
+  color: var(--ink-black);
+  border: 2px solid var(--ink-black);
+  padding: 10px 22px;
+  transition: all var(--transition-normal) var(--ease-out-quart);
+}
+
+.btn-ink:hover {
+  background: rgba(61, 46, 36, 0.05);
+}
+
+.btn-ink::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  background: var(--ink-black);
+  border-radius: var(--btn-radius);
+  z-index: -1;
+  opacity: 0.3;
+  transform: scale(0.95);
+  transition: transform var(--transition-normal) var(--ease-bounce),
+              opacity var(--transition-normal) ease;
+}
+
+.btn-ink:hover::before {
+  transform: scale(1);
+  opacity: 0.1;
+}
+
+/* 墨水扩散效果 */
+.ink-splash {
+  position: relative;
+}
+
+.ink-splash::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, var(--ink-black) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.ink-splash:hover::after {
+  animation: ink-spread 2s var(--ease-out-quart) infinite;
+}
+
+/* 黑暗主题配色 */
+[data-theme="dark"] {
+  --primary-bg: #121212;
+  --secondary-bg: #1f1f1f;
+  --primary-text: #f0e6d8;
+  --secondary-text: #b8aea0;
+  --nav-bg: rgba(31, 31, 31, 0.95);
+  --nav-shadow: rgba(0, 0, 0, 0.15);
+  --card-bg: #252525;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(45, 45, 45, 0.8);
+  --label-color: rgba(240, 230, 216, 0.7);
+  --focus-outline: #e66354;
+  --scrollbar-track: rgba(255, 255, 255, 0.05);
+  --scrollbar-thumb: rgba(209, 67, 52, 0.25);
+  --scrollbar-thumb-hover: rgba(209, 67, 52, 0.4);
+  
+  /* 暗色模式下背景和毛玻璃效果 */
+  --background-opacity: 0.6;
+  --content-bg-color: rgba(18, 18, 18, 0.7);
+  --content-bg-fallback: rgba(18, 18, 18, 0.9);
+}
+
+/* 自动主题切换支持 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary-bg: #121212;
+    --secondary-bg: #1f1f1f;
+    --primary-text: #f0e6d8;
+    --secondary-text: #b8aea0;
+    --nav-bg: rgba(31, 31, 31, 0.95);
+    --nav-shadow: rgba(0, 0, 0, 0.15);
+    --card-bg: #252525;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(45, 45, 45, 0.8);
+    --label-color: rgba(240, 230, 216, 0.7);
+  }
+}
+
+/* 添加通用页面背景和毛玻璃效果样式 */
+.page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--background-image-desktop);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  opacity: var(--background-opacity);
+  transition: opacity 0.3s ease;
+}
+
+.content-with-glass {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  color: var(--primary-text);
+  background-color: var(--content-bg-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s ease;
+}
+
+/* 对那些不支持backdrop-filter的浏览器提供更强的背景色 */
+@supports not (backdrop-filter: blur(10px)) {
+  .content-with-glass {
+    background-color: var(--content-bg-fallback);
+  }
+}
+
+/* 对窄屏设备使用不同的背景图片 */
+@media (max-width: 768px) {
+  .page-background {
+    background-image: var(--background-image-mobile);
+  }
+  
+  .content-with-glass {
+    padding: 20px;
+  }
+}

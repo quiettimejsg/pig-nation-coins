@@ -1,0 +1,14 @@
+.device-management-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .device-management-view {
+    padding: 5px;
+  }
+}

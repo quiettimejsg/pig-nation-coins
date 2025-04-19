@@ -1,0 +1,339 @@
+.device-manager {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.device-manager-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.device-manager-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.device-info-header {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid #4caf50;
+}
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #fff8f8;
+  color: #d32f2f;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  border-left: 4px solid #d32f2f;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #4caf50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-devices {
+  text-align: center;
+  padding: 30px 0;
+  color: #999;
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  margin-bottom: 20px;
+}
+
+.device-item {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,0.95) 100%);
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 12px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 95%;
+  max-width: 900px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 768px) {
+  .device-item {
+    padding: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .device-icon {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  
+  .device-details {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .device-meta {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+  }
+  
+  .device-location {
+    display: block;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .device-actions {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+  }
+  
+  .trust-button, .remove-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 8px;
+    min-height: 44px;
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+  
+  .current-tag {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+    margin-top: 4px;
+  }
+  
+  .device-name {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+}
+
+
+.device-item:hover {
+  background: var(--card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  border-color: #ddd;
+}
+
+.device-item.current-device {
+  background-color: #f8fff8;
+  border-color: #4caf50;
+}
+
+.device-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #f1f2f3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.device-details {
+  flex: 1;
+}
+
+.device-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.current-tag {
+  margin-left: 8px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
+.device-meta, .device-location {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.dot-separator {
+  margin: 0 6px;
+  color: #ccc;
+}
+
+.device-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.trust-button, .remove-button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.trust-button {
+  color: #555;
+}
+
+.trust-button.trusted {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.trust-button:hover {
+  background-color: #f1f1f1;
+}
+
+.trust-button.trusted:hover {
+  background-color: #d8eed9;
+}
+
+.remove-button {
+  color: #d32f2f;
+  border-color: #ffcdd2;
+}
+
+.remove-button:hover {
+  background-color: #fff8f8;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.confirm-remove, .cancel-remove {
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.confirm-remove {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.confirm-remove:hover {
+  background-color: #b71c1c;
+}
+
+.cancel-remove {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.cancel-remove:hover {
+  background-color: #e0e0e0;
+}
+
+.device-manager-footer {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.sign-out-all-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sign-out-all-button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.sign-out-all-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

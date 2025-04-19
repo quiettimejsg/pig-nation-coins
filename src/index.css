@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&family=Noto+Serif+SC:wght@400;500;700&display=swap');
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 增强的平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 根元素布局 */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* 防止水平溢出 */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* 文字排版优化 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* 增强的按钮基础样式 */
+button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 波纹效果 */
+button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+
+button:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* 表单输入优化 */
+input, select, textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--primary-text);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(209, 67, 52, 0.2), inset 0 2px 4px rgba(0,0,0,0.05);
+  transform: translateY(-1px);
+}
+
+/* 浮动标签效果 */
+.float-label {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.float-label input {
+  height: 3.5rem;
+}
+
+.float-label label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  color: var(--label-color);
+}
+
+.float-label input:focus + label,
+.float-label input:not(:placeholder-shown) + label {
+  top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--primary-500);
+}
+
+/* 高级动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* 交错动画辅助类 */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 卡片样式增强 */
+.card {
+  background: var(--card-bg, #fff);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* 毛笔水墨效果 */
+.ink-wash-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ink-wash-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/ink-wash-overlay.svg') no-repeat;
+  background-size: cover;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 优化滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track, rgba(0,0,0,0.05));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, rgba(0,0,0,0.15));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover, rgba(0,0,0,0.25));
+}
+
+/* 圆形装饰元素 */
+.circle-decoration {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--circle-bg, rgba(209, 67, 52, 0.05));
+  filter: blur(40px);
+  z-index: -1;
+  animation: float 15s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(30px, 30px) rotate(10deg); }
+}
+
+/* 加载状态动画 */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading {
+  animation: spin 1s linear infinite;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* 全局链接样式 */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* 响应式容器 */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 导航样式 */
+.main-nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eaeaea;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-right: 0.5rem;
+}
+
+.main-nav a:hover {
+  background-color: #f0f0f0;
+}
+
+/* 语言和主题切换 */
+.language-select {
+  margin-left: auto;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+.theme-toggle {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* 登录页面 - 通用样式增强 */
+.login-container {
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 登录步骤标题 */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* 表单组件样式 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* 验证码容器 */
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px dashed #ddd;
+}
+
+.captcha-image {
+  height: 50px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.refresh-captcha {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.refresh-captcha:hover {
+  background-color: #f0f0f0;
+}
+
+/* 二步验证信息 */
+.two-factor-info {
+  background-color: #f0f7ff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #4a90e2;
+}
+
+.two-factor-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* 二维码登录 */
+.qr-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.qr-code {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.qr-svg {
+  display: block;
+}
+
+.qr-login-hint {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+/* 提交按钮 */
+.submit-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #3a80d2;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  background-color: #a0c3f0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 登录选项 */
+.login-options {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-qr-login {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.toggle-qr-login:hover {
+  background-color: rgba(74, 144, 226, 0.1);
+  text-decoration: underline;
+}
+
+/* 设备管理样式 */
+.device-management {
+  margin-top: 2rem;
+}
+
+.device-list {
+  list-style: none;
+  padding: 0;
+}
+
+.device-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.device-info {
+  flex: 1;
+}
+
+.device-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.device-last-active {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.revoke-device {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.revoke-device:hover {
+  background-color: #cf1322;
+}
+
+.device-trusted-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #52c41a;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+/* 暗色主题调整 */
+[data-theme="dark"] .login-container {
+  background-color: #333;
+  border-color: #444;
+}
+
+[data-theme="dark"] .login-container h2 {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .form-group label {
+  color: #ccc;
+}
+
+[data-theme="dark"] .form-group input {
+  background-color: #444;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .submit-btn {
+  background-color: #1890ff;
+}
+
+[data-theme="dark"] .submit-btn:hover {
+  background-color: #096dd9;
+}
+
+[data-theme="dark"] .captcha-container {
+  background-color: #444;
+  border-color: #555;
+}
+
+[data-theme="dark"] .two-factor-info {
+  background-color: #15395b;
+  border-left-color: #1890ff;
+}
+
+[data-theme="dark"] .two-factor-info p {
+  color: #ccc;
+}
+
+[data-theme="dark"] .toggle-qr-login {
+  color: #1890ff;
+}
+
+[data-theme="dark"] .toggle-qr-login:hover {
+  background-color: rgba(24, 144, 255, 0.1);
+}
+
+[data-theme="dark"] .test-accounts {
+  background-color: #444;
+  border-color: #555;
+}
+
+/* 登录页面 - 测试账户信息 */
+.test-accounts {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+.test-accounts h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.test-accounts ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.test-accounts li {
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+[data-theme="dark"] .test-accounts {
+  background-color: #333;
+  border-color: #444;
+}
+
+[data-theme="dark"] .test-accounts h3,
+[data-theme="dark"] .test-accounts li {
+  color: #ccc;
+}

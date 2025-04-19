@@ -1,0 +1,199 @@
+{
+  "html_meta": {
+    "title": "ピッグネーション電子コイン",
+    "description": "ピッグネーション公式デジタル通貨交換プラットフォーム"
+  },
+  "app": {
+    "footer_copyright": ""
+  },
+  "app_name": "ピッグコインシステム",
+  "nav": {
+    "home": "ホーム",
+    "dashboard": "ダッシュボード",
+    "transactions": "取引履歴",
+    "logout": "ログアウト",
+    "login": "ログイン",
+    "user_panel": "ユーザーパネル",
+    "merchant_panel": "マーチャントパネル",
+    "admin_panel": "管理者パネル",
+    "payment": "支払い"
+  },
+  "navigation": {
+    "login_page": {
+      "login": "ログイン",
+      "userPanel": "ユーザーパネル",
+      "merchantPanel": "マーチャントダッシュボード",
+      "adminPanel": "管理者パネル"
+    },
+    "transactionType": {
+      "deposit": "入金",
+      "withdrawal": "出金",
+      "payment": "支払い"
+    }
+  },
+  "language": {
+    "zh": "中国語",
+    "en": "英語",
+    "ja": "日本語",
+    "select": "言語を選択"
+  },
+  "theme": {
+    "toggle": "テーマ切替",
+    "light": "ライトモード",
+    "dark": "ダークモード"
+  },
+  "login": {
+    "title_username": "アカウントログイン",
+    "title_verification": "認証",
+    "title_qr_login": "QRコードログイン",
+    "title_register": "アカウント登録",
+    "username_required": "ユーザー名を入力してください",
+    "username_placeholder": "ユーザー名を入力してください",
+    "totp_required": "認証コードを入力してください",
+    "totp_placeholder": "6桁のコードを入力",
+    "totp_length_error": "認証コードは6桁である必要があります",
+    "user_not_found": "ユーザーが見つかりません",
+    "totp_invalid": "認証コードが無効です、認証アプリを確認してください",
+    "login_failed": "ログインに失敗しました、再試行してください",
+    "qr_init_failed": "QRコード生成に失敗しました、再試行してください",
+    "qr_scanned": "スキャン完了、モバイルデバイスで確認してください",
+    "qr_scan_hint": "ピッグコインアプリでこのQRコードをスキャンして素早くログインしてください",
+    "refresh_qr": "QRコードを更新",
+    "use_totp_login": "認証アプリを使用",
+    "use_qr_login": "QRコードログイン",
+    "test_account_title": "テストアカウント情報",
+    "test_account_description": "開発環境では、任意のユーザー名と6桁の認証コードでログインできます",
+    "test_account_production": "本番環境では、実際のTOTP認証が使用されます",
+    "modify": "変更",
+    "processing": "処理中...",
+    "verifying": "確認中...",
+    "password_required": "パスワードを入力してください",
+    "password_placeholder": "パスワードを入力",
+    "confirm_password_required": "パスワードを確認してください",
+    "confirm_password_placeholder": "もう一度パスワードを入力",
+    "passwords_not_match": "パスワードが一致しません",
+    "register_button": "登録",
+    "register_success": "登録成功、ログインしてください",
+    "register_failed": "登録に失敗しました、再試行してください",
+    "no_account_register": "アカウントをお持ちでない方はこちら",
+    "already_have_account": "すでにアカウントをお持ちの方はこちら",
+    "select_role": "ロールを選択",
+    "role_user": "一般ユーザー",
+    "role_merchant": "販売者"
+  },
+  "user_dashboard": {
+    "welcome": "ようこそ",
+    "userInfo": "ユーザー情報",
+    "username": "ユーザー名",
+    "balance": "口座残高",
+    "recentTransactions": "最近の取引",
+    "deviceManagement": "デバイス管理"
+  },
+  "admin_dashboard": {
+    "title": "管理システム",
+    "totalUsers": "総ユーザー数",
+    "dailyTransactions": "本日の取引量",
+    "systemBalance": "システム残高",
+    "userManagement": "ユーザー管理",
+    "role": "権限",
+    "actions": "操作",
+    "disableUser": "無効化",
+    "transactionAudit": "取引監査",
+    "verifyTransaction": "検証する"
+  },
+  "merchant_dashboard": {
+    "title": "販売者管理システム",
+    "businessInfo": "販売者情報",
+    "balance": "口座残高",
+    "transactions": "総取引量",
+    "recentTransactions": "最近の取引記録",
+    "settleAccount": "決済口座",
+    "viewStatement": "取引明細を表示"
+  },
+  "transactionType": {
+    "deposit": "預金",
+    "withdrawal": "引き出し",
+    "payment": "支払い",
+    "adjustment": "残高調整"
+  },
+  "login_page": {
+    "error": {
+      "auth": "認証に失敗しました。ユーザー名とパスワードを確認してください"
+    },
+    "title": "Pigコインシステム ログイン",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "usernameRequired": "ユーザー名を入力してください",
+    "passwordRequired": "パスワードを入力してください",
+    "usernamePlaceholder": "ユーザー名を入力",
+    "passwordPlaceholder": "パスワードを入力",
+    "submitButton": "ログイン",
+    "submitError": "ログインに失敗いたしました。もう一度お試しください"
+  },
+  "payment": {
+    "generate_code": "支払いコードを生成",
+    "enter_amount": "金額を入力してください",
+    "scan_code": "支払いコードをスキャン",
+    "scan_result": "スキャン結果",
+    "confirm_payment": "支払いを確認",
+    "payment_success": "支払い完了",
+    "payment_failed": "支払い失敗",
+    "login_required": "支払い機能を使用するにはログインしてください",
+    "current_balance": "現在の残高",
+    "insufficient_funds": "残高不足のため、支払いを完了できません"
+  },
+  "not_found": {
+    "title": "ページが見つかりません",
+    "message": "お探しのページは存在しません",
+    "back": "ホームに戻る"
+  },
+  "error_page": {
+    "title": "エラーが発生しました",
+    "message": "申し訳ありませんが、このページの読み込み中に問題が発生しました。以下をお試しください：",
+    "back_home": "ホームに戻る"
+  },
+  "common": {
+    "loading": "ロード中...",
+    "error": "エラー",
+    "success": "成功",
+    "confirm": "確認",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "削除",
+    "edit": "編集",
+    "network_error": "ネットワークエラー、接続を確認してください",
+    "logout": "ログアウト",
+    "user_not_found": "ユーザーが見つかりません",
+    "invalid_amount": "無効な金額"
+  },
+  "user": {
+    "welcome": "ようこそ",
+    "balance": "口座残高",
+    "recent_transactions": "最近の取引",
+    "no_transactions": "取引履歴がありません"
+  },
+  
+  "device_management": {
+    "title": "デバイス管理",
+    "description": "ログインしたデバイスを管理します。信頼できるデバイスは二次認証なしでログインできます。",
+    "current_device": "現在のデバイス",
+    "last_active": "最終アクティブ:",
+    "just_now": "たった今",
+    "minutes_ago": "分前",
+    "hours_ago": "時間前",
+    "days_ago": "日前",
+    "trust_device": "デバイスを信頼する",
+    "untrust_device": "デバイスの信頼を解除",
+    "trusted": "信頼済み",
+    "remove": "削除",
+    "remove_tooltip": "ログイン済みデバイスから削除",
+    "confirm_remove": "削除を確認",
+    "cancel": "キャンセル",
+    "loading": "デバイスリストを読み込み中...",
+    "no_devices": "ログイン済みのデバイスが見つかりません",
+    "error": "デバイスリストを読み込めません。後でもう一度お試しください",
+    "remove_failed": "デバイスの削除に失敗しました",
+    "trust_failed": "デバイスの信頼設定の変更に失敗しました",
+    "sign_out_all": "他のすべてのデバイスからログアウト"
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "html_meta": {
+    "title": "猪之国电子猪币",
+    "description": "猪之国官方数字货币交易平台"
+  },
+  "app": {
+    "footer_copyright": ""
+  },
+  "app_name": "猪币系统",
+  "nav": {
+    "home": "首页",
+    "dashboard": "仪表板",
+    "transactions": "交易记录",
+    "logout": "退出登录",
+    "login": "登录",
+    "user_panel": "用户面板",
+    "merchant_panel": "商户管理界面",
+    "admin_panel": "管理界面",
+    "payment": "支付"
+  },
+  "navigation": {
+    "login_page": {
+      "login": "登录",
+      "userPanel": "用户面板",
+      "merchantPanel": "商户管理界面",
+      "adminPanel": "管理界面"
+    },
+    "transactionType": {
+      "deposit": "存款",
+      "withdrawal": "取款",
+      "payment": "支付"
+    }
+  },
+  "language": {
+    "zh": "中文",
+    "en": "英语",
+    "ja": "日语",
+    "select": "选择语言"
+  },
+  "theme": {
+    "toggle": "主题切换",
+    "light": "白天模式",
+    "dark": "黑夜模式"
+  },
+  "login": {
+    "title_username": "登录账户",
+    "title_verification": "身份验证",
+    "title_qr_login": "扫码登录",
+    "title_register": "注册账户",
+    "username_required": "请输入用户名",
+    "username_placeholder": "请输入用户名",
+    "totp_required": "请输入验证码",
+    "totp_placeholder": "请输入6位验证码",
+    "totp_length_error": "验证码必须为6位数字",
+    "user_not_found": "用户不存在",
+    "totp_invalid": "验证码无效，请检查您的身份验证器应用",
+    "login_failed": "登录失败，请重试",
+    "qr_init_failed": "二维码生成失败，请重试",
+    "qr_scanned": "已扫描，请在手机上确认",
+    "qr_scan_hint": "使用小猪币APP扫描此二维码快速登录",
+    "refresh_qr": "刷新二维码",
+    "use_totp_login": "使用身份验证器登录",
+    "use_qr_login": "二维码登录",
+    "test_account_title": "测试账户说明",
+    "test_account_description": "在开发环境中，任意用户名和6位数字验证码均可登录",
+    "test_account_production": "在生产环境中将使用真实的TOTP验证",
+    "modify": "修改",
+    "processing": "处理中...",
+    "verifying": "验证中...",
+    "password_required": "请输入密码",
+    "password_placeholder": "请输入密码",
+    "confirm_password_required": "请确认密码",
+    "confirm_password_placeholder": "请再次输入密码",
+    "passwords_not_match": "两次输入的密码不一致",
+    "register_button": "注册",
+    "register_success": "注册成功，请登录",
+    "register_failed": "注册失败，请重试",
+    "no_account_register": "没有账号？注册",
+    "already_have_account": "已有账号？去登录",
+    "select_role": "选择角色",
+    "role_user": "普通用户",
+    "role_merchant": "商户"
+  },
+  "user_dashboard": {
+    "userInfo": "用户信息",
+    "username": "用户名",
+    "balance": "账户余额",
+    "recentTransactions": "近期交易",
+    "deviceManagement": "设备管理"
+  },
+  "admin_dashboard": {
+    "title": "后台管理系统",
+    "totalUsers": "总用户数",
+    "dailyTransactions": "今日交易量",
+    "systemBalance": "系统余额",
+    "userManagement": "用户管理",
+    "role": "权限角色",
+    "actions": "操作",
+    "disableUser": "禁用",
+    "transactionAudit": "交易审计",
+    "verifyTransaction": "验证交易"
+  },
+  "merchant_dashboard": {
+    "title": "商户管理系统",
+    "businessInfo": "商户信息",
+    "balance": "账户余额",
+    "transactions": "总交易量",
+    "recentTransactions": "近期交易记录",
+    "settleAccount": "结算账户",
+    "viewStatement": "查看对账单"
+  },
+  "transactionType": {
+    "deposit": "存款",
+    "withdrawal": "取款",
+    "payment": "支付",
+    "adjustment": "余额调整"
+  },
+  "login_page": {
+    "error": {
+      "auth": "认证失败"
+    },
+    "title": "猪币系统登录",
+    "username": "用户名",
+    "password": "密码",
+    "usernameRequired": "请输入用户名",
+    "passwordRequired": "请输入密码",
+    "usernamePlaceholder": "请输入用户名",
+    "passwordPlaceholder": "请输入密码",
+    "submitButton": "登录",
+    "submitError": "登录失败，请检查用户名和密码后重试"
+  },
+  "payment": {
+    "generate_code": "生成支付码",
+    "enter_amount": "输入支付金额",
+    "scan_code": "扫描收款码",
+    "scan_result": "扫描结果",
+    "confirm_payment": "确认支付",
+    "payment_success": "支付成功",
+    "payment_failed": "支付失败",
+    "login_required": "请先登录再使用支付功能",
+    "current_balance": "当前余额",
+    "insufficient_funds": "余额不足，无法完成支付"
+  },
+  "not_found": {
+    "title": "页面未找到",
+    "message": "您查找的页面不存在",
+    "back": "返回首页"
+  },
+  "error_page": {
+    "title": "发生错误",
+    "message": "抱歉，当前页面加载出现问题，请尝试以下操作：",
+    "back_home": "返回首页"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "network_error": "网络错误，请检查网络连接并重试",
+    "logout": "退出登录",
+    "user_not_found": "找不到用户",
+    "invalid_amount": "无效的金额"
+  },
+  "user": {
+    "welcome": "欢迎",
+    "balance": "账户余额",
+    "recent_transactions": "近期交易",
+    "no_transactions": "暂无交易记录"
+  },
+  "device_management": {
+    "title": "设备管理",
+    "description": "管理已登录的设备。受信任的设备可以无需二次验证登录。",
+    "current_device": "当前设备",
+    "last_active": "最后活跃:",
+    "just_now": "刚刚",
+    "minutes_ago": "分钟前",
+    "hours_ago": "小时前",
+    "days_ago": "天前",
+    "trust_device": "信任此设备",
+    "untrust_device": "取消信任",
+    "trusted": "已信任",
+    "remove": "移除",
+    "remove_tooltip": "从登录设备中移除",
+    "confirm_remove": "确认移除",
+    "cancel": "取消",
+    "loading": "正在加载设备列表...",
+    "no_devices": "没有找到登录设备",
+    "error": "加载设备列表失败，请稍后重试",
+    "remove_failed": "移除设备失败",
+    "trust_failed": "更改设备信任状态失败",
+    "sign_out_all": "登出所有其他设备"
+  }
+}
