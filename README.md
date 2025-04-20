@@ -1,6 +1,6 @@
 # Pig Nation Coins
 
-[English](#english) | [中文](#chinese) | [日本語](#japanese)
+[English](#english) |  [日本語]([#japanese]) | [中文]([#chinese]) 
 
 ---
 
