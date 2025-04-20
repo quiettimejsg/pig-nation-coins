@@ -1,3 +1,5 @@
+# Pig Nation Coins
+
 ## 中文 {#chinese}
 
 ### 现代化加密货币管理系统
