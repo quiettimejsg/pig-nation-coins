@@ -1,3 +1,5 @@
+# Pig Nation Coins
+
 ## 日本語 {#japanese}
 
 ### 暗号通貨管理システム
