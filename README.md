@@ -1,9 +1,10 @@
 # Pig Nation Coins
 
-[English](README-EN.md) |  [日本語](README-JP.md) | [中文](README-CN.md) 
+[English](#english) | [日本語](#japanese) | [中文](#chinese) 
 
 ---
 
+<a id="english"></a>
 ## English
 
 ### A Modern Cryptocurrency Management System
@@ -68,7 +69,8 @@ MIT License © 2025 Pig Nation
 
 ---
 
-## 日本語 {#japanese}
+<a id="japanese"></a>
+## 日本語
 
 ### 暗号通貨管理システム
 
@@ -101,6 +103,7 @@ npm run dev
 # プロダクションビルド
 npm run build
 ```
+
 ### ⚙ 設定
 1. `src/locales/` に日本語ファイル（ja.json）を追加
 2. i18n設定ファイルを更新
@@ -118,6 +121,7 @@ npm run build
 │   ├── styles/        # コンポーネントスタイル
 │   └── utils/         # ユーティリティ関数
 ```
+
 ### 🤝 貢献
 1. リポジトリをフォーク
 2. 新しいブランチを作成 (`git checkout -b feature/xxx`)
@@ -128,8 +132,10 @@ npm run build
 ### 📄 ライセンス
 MIT License © 2025 Pig Nation
 
+---
 
-## 中文 {#chinese}
+<a id="chinese"></a>
+## 中文
 
 ### 现代化加密货币管理系统
 
