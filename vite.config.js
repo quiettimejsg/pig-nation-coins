@@ -32,7 +32,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      '@zxing/browser': path.resolve(__dirname, './node_modules/@zxing/browser')
     }
   },
   esbuild: {
@@ -46,7 +47,8 @@ export default defineConfig({
     open: true,
     hmr: {
       overlay: false // 禁用HMR错误覆盖层，提升性能
-    }
+    },
+    allowedHosts: ['5173-ibjgqtv61iad6hspybjfq-1fc8c3ef.manusvm.computer']
   },
   build: {
     minify: 'terser',
@@ -94,3 +96,4 @@ export default defineConfig({
     exclude: ['@webcomponents/webcomponentsjs']
   }
 })
+
