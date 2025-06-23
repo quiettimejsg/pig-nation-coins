@@ -38,6 +38,8 @@ const LitWrapper = ({ tagName, props = {} }) => {
 const UserDashboard = React.lazy(() => import('./views/UserDashboard.jsx'));
 const NotFound = React.lazy(() => import('./views/NotFound.jsx'));
 const DeviceManagementView = React.lazy(() => import('./views/DeviceManagementView.jsx'));
+const AdminDashboard = React.lazy(() => import('./views/AdminDashboard.js'));
+const MerchantDashboard = React.lazy(() => import('./views/MerchantDashboard.js'));
 
 // 预加载Lit组件
 const preloadLitComponent = async (path) => {
@@ -130,23 +132,15 @@ export default createRouter([
       {
         path: '/merchant',
         element: <React.Suspense fallback={<LoadingOverlay />}>
-          <LitWrapper tagName="merchant-dashboard" />
-        </React.Suspense>,
-        loader: async () => {
-          await preloadLitComponent('./views/MerchantDashboard.js');
-          return null;
-        },
+        <MerchantDashboard />
+      </React.Suspense>,
         meta: { requiresAuth: true, role: 'merchant' }
       },
       {
         path: '/admin',
         element: <React.Suspense fallback={<LoadingOverlay />}>
-          <LitWrapper tagName="admin-dashboard" />
-        </React.Suspense>,
-        loader: async () => {
-          await preloadLitComponent('./views/AdminDashboard.js');
-          return null;
-        },
+        <AdminDashboard />
+      </React.Suspense>,
         meta: { requiresAuth: true, role: 'admin' }
       },
       {
