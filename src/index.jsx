@@ -38,8 +38,30 @@ const App = () => {
     initApp();
   }, []);
 
+  useEffect(() => {
+    const updateMetadata = () => {
+      // 动态更新文档标题和元描述
+      document.title = i18n.t('html_meta.title');
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.content = i18n.t('html_meta.description');
+      }
+    };
+
+    // 初始调用
+    updateMetadata();
+
+    // 订阅语言变化事件
+    i18n.on('languageChanged', updateMetadata);
+
+    // 清理函数
+    return () => {
+      i18n.off('languageChanged', updateMetadata);
+    };
+  }, [i18n]);
+
   if (!isReady) {
-    return <div className="loading">加载中...</div>;
+return <div className="loading">{i18n.t('common.loading')}</div>;
   }
 
   return (
@@ -64,4 +86,4 @@ try {
   }
 } catch (err) {
   console.error('应用渲染失败:', err);
-} 
+}
