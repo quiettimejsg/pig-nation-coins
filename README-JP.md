@@ -1,6 +1,9 @@
 # Pig Nation Coins
+[English](README.md) | [中文](README-CN.md)
 
-## 日本語 {#japanese}
+---
+
+## 日本語
 
 ### 暗号通貨管理システム
 

@@ -1,6 +1,8 @@
 # Pig Nation Coins
+[English](README.md) | [日本語](README-JP.md) 
 
-## 中文 {#chinese}
+---
+## 中文
 
 ### 现代化加密货币管理系统
 
