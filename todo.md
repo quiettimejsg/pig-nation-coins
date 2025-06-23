@@ -8,6 +8,7 @@ filePath: pig-nation-coins\src\store.js
 3. **安全隐患**：密码明文存储在前端状态中，如`<mcsymbol name="users" filename="store.js" path="pig-nation-coins\src\store.js" startline="342" type="object"></mcsymbol>`
 4. **数据持久化风险**：自定义存储函数存在循环引用处理不完善问题
 5. **功能实现简陋**：二维码登录等功能依赖随机数模拟状态变化
+6. **国际化实现**
 
 ### 二、重构与实现方案
 #### 1. 模块化拆分（按功能域）
