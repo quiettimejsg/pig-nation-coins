@@ -181,6 +181,16 @@
     "recent_transactions": "最近の取引",
     "no_transactions": "取引履歴がありません"
   },
+  "admin": {
+    "welcome": "管理者ようこそ",
+    "total_users": "総ユーザー数",
+    "total_transactions": "総取引数",
+    "total_volume": "取引総額",
+    "recent_users": "最近のユーザー",
+    "no_users": "ユーザーがいません",
+    "recent_transactions": "最近の取引",
+    "no_transactions": "取引がありません"
+  },
   "device_management": {
     "title": "デバイス管理",
     "description": "ログインしたデバイスを管理します。信頼できるデバイスは二次認証なしでログインできます。",

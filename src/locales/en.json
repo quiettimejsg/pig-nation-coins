@@ -180,6 +180,16 @@
     "recent_transactions": "Recent Transactions",
     "no_transactions": "No Transactions"
   },
+  "admin": {
+    "welcome": "Welcome Admin",
+    "total_users": "Total Users",
+    "total_transactions": "Total Transactions",
+    "total_volume": "Total Volume",
+    "recent_users": "Recent Users",
+    "no_users": "No Users",
+    "recent_transactions": "Recent Transactions",
+    "no_transactions": "No Transactions"
+  },
   "device_management": {
     "title": "Device Management",
     "description": "Manage your logged-in devices. Trusted devices can login without secondary verification.",

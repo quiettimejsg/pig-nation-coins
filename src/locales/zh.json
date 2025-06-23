@@ -180,6 +180,16 @@
     "recent_transactions": "最近交易",
     "no_transactions": "暂无交易记录"
   },
+  "admin": {
+    "welcome": "欢迎管理员",
+    "total_users": "总用户数",
+    "total_transactions": "总交易数",
+    "total_volume": "交易总额",
+    "recent_users": "最近用户",
+    "no_users": "暂无用户",
+    "recent_transactions": "最近交易",
+    "no_transactions": "暂无交易"
+  },
   "device_management": {
     "title": "设备管理",
     "description": "管理已登录的设备。受信任的设备可以无需二次验证登录。",
