@@ -1,26 +1,26 @@
 {
   "html_meta": {
     "title": "Pig Nation e-Coin",
-    "description": "Official digital currency exchange platform of Pig Nation"
+    "description": "Official Digital Currency Exchange Platform of Pig Nation"
   },
   "app": {
     "footer_copyright": ""
   },
-  "app_name": "Pig Coin System",
+  "app_name": "PigCoin System",
   "nav": {
     "home": "Home",
     "dashboard": "Dashboard",
     "transactions": "Transactions",
-    "logout": "Logout",
-    "login": "Login",
+    "logout": "Log Out",
+    "login": "Log In",
     "user_panel": "User Panel",
     "merchant_panel": "Merchant Panel",
     "admin_panel": "Admin Panel",
-    "payment": "Payment"
+    "payment": "Payments"
   },
   "navigation": {
     "login_page": {
-      "login": "Login",
+      "login": "Log In",
       "userPanel": "User Panel",
       "merchantPanel": "Merchant Dashboard",
       "adminPanel": "Admin Panel"
@@ -32,124 +32,124 @@
     }
   },
   "language": {
-    "zh": "Chinese",
+    "zh": "中文 (Chinese)",
     "en": "English",
-    "ja": "Japanese",
+    "ja": "日本語 (Japanese)",
     "select": "Select Language"
   },
   "theme": {
-    "toggle": "Toggle Theme",
+    "toggle": "Theme",
     "light": "Light Mode",
     "dark": "Dark Mode"
   },
   "login": {
-    "title_username": "Login Account",
+    "title_username": "Account Login",
     "title_verification": "Verification",
     "title_qr_login": "QR Code Login",
-    "title_register": "Register Account",
-    "username_required": "Please enter your username",
-    "username_placeholder": "Enter your username",
-    "totp_required": "Please enter verification code",
+    "title_register": "Create Account",
+    "username_required": "Username required",
+    "username_placeholder": "Enter username",
+    "totp_required": "Verification code required",
     "totp_placeholder": "Enter 6-digit code",
-    "totp_length_error": "Verification code must be 6 digits",
+    "totp_length_error": "Code must be 6 digits",
     "user_not_found": "User not found",
-    "totp_invalid": "Invalid verification code, please check your authenticator app",
-    "login_failed": "Login failed, please try again",
-    "qr_init_failed": "QR code generation failed, please try again",
-    "qr_scanned": "Scanned, please confirm on your mobile device",
-    "qr_scan_hint": "Scan this QR code with the Pig Coin APP for quick login",
-    "refresh_qr": "Refresh QR Code",
-    "use_totp_login": "Use Authenticator Login",
-    "use_qr_login": "QR Code Login",
-    "test_account_title": "Test Account Info",
-    "test_account_description": "In development environment, any username and 6-digit verification code will work",
-    "test_account_production": "In production, real TOTP verification will be used",
-    "modify": "Modify",
+    "totp_invalid": "Invalid code - check authenticator app",
+    "login_failed": "Login failed - please retry",
+    "qr_init_failed": "Failed to generate QR code",
+    "qr_scanned": "Scanned - confirm on mobile",
+    "qr_scan_hint": "Scan with PigCoin App for instant login",
+    "refresh_qr": "New QR Code",
+    "use_totp_login": "Authenticator Login",
+    "use_qr_login": "QR Login",
+    "test_account_title": "Test Account",
+    "test_account_description": "Development: Any username + 6-digit code works",
+    "test_account_production": "Production: Real TOTP required",
+    "modify": "Change",
     "processing": "Processing...",
     "verifying": "Verifying...",
-    "password_required": "Please enter password",
+    "password_required": "Password required",
     "password_placeholder": "Enter password",
-    "confirm_password_required": "Please confirm password",
-    "confirm_password_placeholder": "Enter password again",
-    "passwords_not_match": "Passwords do not match",
+    "confirm_password_required": "Confirm password",
+    "confirm_password_placeholder": "Re-enter password",
+    "passwords_not_match": "Passwords don't match",
     "register_button": "Register",
-    "register_success": "Registration successful, please login",
-    "register_failed": "Registration failed, please try again",
-    "no_account_register": "No account? Register",
-    "already_have_account": "Already have an account? Login",
-    "select_role": "Select Role",
-    "role_user": "Normal User",
-    "role_merchant": "Merchant"
+    "register_success": "Registration complete - please log in",
+    "register_failed": "Registration failed - please retry",
+    "no_account_register": "New user? Register",
+    "already_have_account": "Existing user? Log In",
+    "select_role": "Account Type",
+    "role_user": "Standard User",
+    "role_merchant": "Merchant Account"
   },
   "user_dashboard": {
-    "userInfo": "User Information",
+    "userInfo": "Profile",
     "username": "Username",
-    "balance": "Account Balance",
-    "recentTransactions": "Recent Transactions",
-    "deviceManagement": "Device Management"
+    "balance": "Balance",
+    "recentTransactions": "Recent Activity",
+    "deviceManagement": "Devices"
   },
   "admin_dashboard": {
-    "title": "Admin Management System",
+    "title": "Admin Console",
     "totalUsers": "Total Users",
-    "dailyTransactions": "Daily Transactions",
+    "dailyTransactions": "Today's Transactions",
     "systemBalance": "System Balance",
     "userManagement": "User Management",
     "role": "Role",
     "actions": "Actions",
     "disableUser": "Disable",
-    "transactionAudit": "Transaction Audit",
+    "transactionAudit": "Audit Transactions",
     "verifyTransaction": "Verify"
   },
   "merchant_dashboard": {
-    "title": "Merchant Management System",
-    "businessInfo": "Business Information",
-    "balance": "Account Balance",
+    "title": "Merchant Portal",
+    "businessInfo": "Business Profile",
+    "balance": "Balance",
     "transactions": "Transaction Volume",
-    "recentTransactions": "Recent Transactions",
-    "settleAccount": "Merchant Settlement",
-    "viewStatement": "View Statement"
+    "recentTransactions": "Recent Payments",
+    "settleAccount": "Settle Funds",
+    "viewStatement": "View Statements"
   },
   "transactionType": {
     "deposit": "Deposit",
     "withdrawal": "Withdrawal",
     "payment": "Payment",
-    "adjustment": "Balance Adjustment"
+    "adjustment": "Adjustment"
   },
   "login_page": {
     "error": {
-      "auth": "Authentication failed"
+      "auth": "Authentication error"
     },
-    "title": "Pig Coin System Login",
+    "title": "PigCoin System Login",
     "username": "Username",
     "password": "Password",
-    "usernameRequired": "Username is required",
-    "passwordRequired": "Password is required",
+    "usernameRequired": "Enter username",
+    "passwordRequired": "Enter password",
     "usernamePlaceholder": "Username",
     "passwordPlaceholder": "Password",
     "submitButton": "Sign In",
-    "submitError": "Authentication failed. Please verify your credentials and try again."
+    "submitError": "Authentication failed - check credentials"
   },
   "payment": {
-    "generate_code": "Generate Payment Code",
-    "enter_amount": "Enter Payment Amount",
-    "scan_code": "Scan Payment Code",
-    "scan_result": "Scan Result",
-    "confirm_payment": "Confirm Payment",
-    "payment_success": "Payment Successful",
+    "generate_code": "Create Payment Code",
+    "enter_amount": "Enter Amount",
+    "scan_code": "Scan to Pay",
+    "scan_result": "Payment Details",
+    "confirm_payment": "Authorize Payment",
+    "payment_success": "Payment Complete",
     "payment_failed": "Payment Failed",
-    "login_required": "Please login to use payment features",
-    "current_balance": "Current Balance",
-    "insufficient_funds": "Insufficient funds to complete payment"
+    "login_required": "Log in to make payments",
+    "current_balance": "Available Balance",
+    "insufficient_funds": "Insufficient balance"
   },
   "not_found": {
     "title": "Page Not Found",
-    "message": "The page you are looking for does not exist",
-    "back": "Back to Home"
+    "message": "The requested page doesn't exist",
+    "back_home": "Return Home"
   },
   "error_page": {
-    "title": "An Error Occurred",
-    "message": "Sorry, there was a problem loading this page. Please try the following:",
-    "back_home": "Back to Home"
+    "title": "System Error",
+    "message": "Unable to load page. Try these steps:",
+    "back_home": "Home"
   },
   "common": {
     "loading": "Loading...",
@@ -160,57 +160,57 @@
     "save": "Save",
     "delete": "Delete",
     "edit": "Edit",
-    "network_error": "Network error. Please check your connection and try again.",
-    "logout": "Logout",
+    "network_error": "Network error - check connection",
+    "logout": "Log Out",
     "user_not_found": "User not found",
     "invalid_amount": "Invalid amount"
   },
   "user": {
     "welcome": "Welcome",
-    "balance": "Account Balance",
-    "recent_transactions": "Recent Transactions",
-    "no_transactions": "No Transactions"
+    "balance": "Your Balance",
+    "recent_transactions": "Recent Activity",
+    "no_transactions": "No transactions"
   },
   "merchant": {
     "welcome": "Welcome",
-    "daily_sales": "Daily Sales",
+    "daily_sales": "Today's Sales",
     "weekly_sales": "Weekly Sales",
     "monthly_sales": "Monthly Sales",
     "account_balance": "Account Balance",
-    "recent_transactions": "Recent Transactions",
-    "no_transactions": "No Transactions"
+    "recent_transactions": "Recent Payments",
+    "no_transactions": "No payments"
   },
   "admin": {
-    "welcome": "Welcome Admin",
+    "welcome": "Admin Dashboard",
     "total_users": "Total Users",
-    "total_transactions": "Total Transactions",
+    "total_transactions": "All Transactions",
     "total_volume": "Total Volume",
-    "recent_users": "Recent Users",
-    "no_users": "No Users",
-    "recent_transactions": "Recent Transactions",
-    "no_transactions": "No Transactions"
+    "recent_users": "New Users",
+    "no_users": "No users",
+    "recent_transactions": "Recent Activity",
+    "no_transactions": "No activity"
   },
   "device_management": {
     "title": "Device Management",
-    "description": "Manage your logged-in devices. Trusted devices can login without secondary verification.",
-    "current_device": "Current Device",
-    "last_active": "Last Active:",
+    "description": "Manage logged-in devices. Trusted devices skip 2-step verification.",
+    "current_device": "This Device",
+    "last_active": "Last active:",
     "just_now": "Just now",
     "minutes_ago": "minutes ago",
     "hours_ago": "hours ago",
     "days_ago": "days ago",
-    "trust_device": "Trust Device",
-    "untrust_device": "Untrust Device",
+    "trust_device": "Mark as Trusted",
+    "untrust_device": "Revoke Trust",
     "trusted": "Trusted",
     "remove": "Remove",
-    "remove_tooltip": "Remove from logged-in devices",
-    "confirm_remove": "Confirm Remove",
+    "remove_tooltip": "Log out this device",
+    "confirm_remove": "Remove Device?",
     "cancel": "Cancel",
-    "loading": "Loading device list...",
-    "no_devices": "No logged-in devices found",
-    "error": "Failed to load device list, please try again later",
-    "remove_failed": "Failed to remove device",
-    "trust_failed": "Failed to change device trust status",
-    "sign_out_all": "Sign Out All Other Devices"
+    "loading": "Loading devices...",
+    "no_devices": "No active devices",
+    "error": "Failed to load devices",
+    "remove_failed": "Removal failed",
+    "trust_failed": "Trust update failed",
+    "sign_out_all": "Log Out Other Devices"
   }
 }
