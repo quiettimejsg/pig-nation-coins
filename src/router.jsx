@@ -59,7 +59,7 @@ const preloadLitComponent = async (path) => {
 export default createRouter([
   {
     path: '/',
-    fallback: <LoadingOverlay visible={true} />,
+    hydrateFallback: <LoadingOverlay visible={true} />,
     element: <App><Outlet /></App>,
     errorElement: <ErrorPage />,
     loader: async ({ request, params }) => {

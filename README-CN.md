@@ -60,4 +60,4 @@ npm run build
 5. 新建Pull Request
 
 ### 📄 开源协议
-MIT License © 2025 Pig Nation
+AGPL-3.0 License © 2025 Pig Nation

@@ -58,4 +58,4 @@ npm run build
 5. Pull Requestを作成
 
 ### 📄 ライセンス
-MIT License © 2025 Pig Nation
+AGPL-3.0 License © 2025 Pig Nation

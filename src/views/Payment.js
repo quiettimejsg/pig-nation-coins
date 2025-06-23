@@ -8,25 +8,25 @@ import { ref } from 'lit/directives/ref.js';
 @customElement('payment-view')
 export class Payment extends LitElement {
   @state()
-  qrData = '';
+  qrData;
 
   @state()
-  scanResult = '';
+  scanResult;
 
   @state()
-  errorMessage = '';
+  errorMessage;
 
   @state()
-  successMessage = '';
+  successMessage;
 
   @state()
-  processing = false;
+  processing;
   
   @state()
-  currentLanguage = '';
+  currentLanguage;
   
   @state()
-  currentTheme = 'light';
+  currentTheme;
 
   videoRef = null;
   qrCodeCanvasRef = null;
@@ -35,6 +35,11 @@ export class Payment extends LitElement {
 
   constructor() {
     super();
+    this.qrData = '';
+    this.scanResult = '';
+    this.errorMessage = '';
+    this.successMessage = '';
+    this.processing = false;
     this.currentLanguage = i18n.language;
     this.currentTheme = useStore.getState().theme || 'light';
     

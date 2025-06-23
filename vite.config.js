@@ -86,7 +86,7 @@ export default defineConfig({
     assetsInlineLimit: 4096
   },
   define: {
-    __DEV__: process.env.NODE_ENV !== 'production',
+    __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
   },
   optimizeDeps: {

@@ -62,4 +62,4 @@ npm run build
 5. Create Pull Request
 
 ### 📄 License
-MIT License © 2025 Pig Nation
+AGPL-3.0 License © 2025 Pig Nation
