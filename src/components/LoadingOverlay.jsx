@@ -1,8 +1,11 @@
-const LoadingOverlay = () => {
+import { useTranslation } from 'react-i18next';
+  // 为了解决无效钩子调用的问题，将 useTranslation 的调用移到函数组件内部
+  const LoadingOverlay = () => {
+  const { t } = useTranslation();
   return (
     <div className="loading-overlay">
       <div className="spinner"></div>
-      <p>加载中...</p>
+      <p>{t('common.loading')}</p>
       <style jsx="true">{`
         .loading-overlay {
           position: fixed;
@@ -35,4 +38,4 @@ const LoadingOverlay = () => {
   );
 };
 
-export default LoadingOverlay; 
+export default LoadingOverlay;

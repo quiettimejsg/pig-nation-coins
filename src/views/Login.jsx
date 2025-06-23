@@ -897,6 +897,44 @@ export default function Login() {
           position: relative;
           z-index: 1;
         }
+  .refresh-qr-btn.stagger-item {
+    padding: 10px 20px;
+    background-color: var(--primary-color, #8b5e3c);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .refresh-qr-btn.stagger-item:hover:not(:disabled) {
+    background-color: var(--primary-color-dark, #6b4e2c);
+  }
+
+  .refresh-qr-btn.stagger-item:disabled {
+    background-color: var(--disabled-color, #cccccc);
+    cursor: not-allowed;
+  }
+
+  /* 暗黑模式适配 */
+  [data-theme="dark"] .refresh-qr-btn.stagger-item {
+    background-color: var(--primary-color, #8b5e3c);
+  }
+
+  [data-theme="dark"] .refresh-qr-btn.stagger-item:hover:not(:disabled) {
+    background-color: var(--primary-color-dark, #6b4e2c);
+  }
+
+  [data-theme="dark"] .refresh-qr-btn.stagger-item:disabled {
+    background-color: var(--disabled-color-dark, #555555);
+  }
         
         /* 暗黑模式适配 */
         [data-theme="dark"] .back-button {

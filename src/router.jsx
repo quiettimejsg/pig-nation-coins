@@ -19,16 +19,19 @@ const LitWrapper = ({ tagName, props = {} }) => {
         element[key] = value;
       });
       
-      // 清空容器并添加元素
-      ref.current.innerHTML = '';
+      // 保存创建的元素引用
+      ref.current._litElement = element;
+      // 添加元素
       ref.current.appendChild(element);
-    }
-    
+
     return () => {
-      if (ref.current) {
-        ref.current.innerHTML = '';
-      }
-    };
+      if (ref.current && ref.current._litElement) {
+        // 只移除我们创建的元素
+        ref.current.removeChild(ref.current._litElement);
+        delete ref.current._litElement;
+        }
+      };
+    }
   }, [tagName, props]);
   
   return <div ref={ref}></div>;
