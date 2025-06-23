@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.8.0",
+    "@zxing/browser": "^0.1.5",
     "axios": "^1.6.2",
     "i18next": "^25.0.0",
     "lit": "^2.7.0",
