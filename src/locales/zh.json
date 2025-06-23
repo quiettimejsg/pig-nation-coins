@@ -171,6 +171,15 @@
     "recent_transactions": "近期交易",
     "no_transactions": "暂无交易记录"
   },
+  "merchant": {
+    "welcome": "欢迎",
+    "daily_sales": "今日销售",
+    "weekly_sales": "本周销售",
+    "monthly_sales": "本月销售",
+    "account_balance": "账户余额",
+    "recent_transactions": "最近交易",
+    "no_transactions": "暂无交易记录"
+  },
   "device_management": {
     "title": "设备管理",
     "description": "管理已登录的设备。受信任的设备可以无需二次验证登录。",

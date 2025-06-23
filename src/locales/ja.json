@@ -172,7 +172,15 @@
     "recent_transactions": "最近の取引",
     "no_transactions": "取引履歴がありません"
   },
-  
+  "merchant": {
+    "welcome": "ようこそ",
+    "daily_sales": "今日の売上",
+    "weekly_sales": "今週の売上",
+    "monthly_sales": "今月の売上",
+    "account_balance": "口座残高",
+    "recent_transactions": "最近の取引",
+    "no_transactions": "取引履歴がありません"
+  },
   "device_management": {
     "title": "デバイス管理",
     "description": "ログインしたデバイスを管理します。信頼できるデバイスは二次認証なしでログインできます。",

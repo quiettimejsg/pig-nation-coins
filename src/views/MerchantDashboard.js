@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useStore } from '../store';
 import { useNavigate } from 'react-router-dom';
 
-function MerchantDashboardComponent() {
+function MerchantDashboard() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { currentUser } = useStore();
