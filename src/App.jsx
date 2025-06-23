@@ -177,9 +177,9 @@ export default function App() {
             onChange={(e) => changeLanguage(e.target.value)}
             aria-label={t('language.select')}
           >
-            <option value="zh">中文</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
+            <option value="zh">{t('language.zh')}</option>
+            <option value="en">{t('language.en')}</option>
+            <option value="ja">{t('language.ja')}</option>
           </select>
           
           <button 

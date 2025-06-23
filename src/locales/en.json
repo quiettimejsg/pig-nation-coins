@@ -32,9 +32,9 @@
     }
   },
   "language": {
-    "zh": "中文 (Chinese)",
+    "zh": "Chinese (中文)",
     "en": "English",
-    "ja": "日本語 (Japanese)",
+    "ja": "Japanese (日本語)",
     "select": "Select Language"
   },
   "theme": {
