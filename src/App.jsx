@@ -182,13 +182,7 @@ export default function App() {
             <option value="ja">{t('language.ja')}</option>
           </select>
           
-          <button 
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label={t('theme.toggle')}
-          >
-            {theme === 'light' ? <FaMoon /> : <FaSun />}
-          </button>
+          
           
           {currentUser && (
             <button 
