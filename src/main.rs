@@ -5,6 +5,8 @@ use serde::{Deserialize, Serialize};
 use std::error::Error;
 use std::fmt;
 
+mod api_service;
+
 #[derive(Debug)]
 pub enum AuthError {
     PasswordHashError(argon2::password_hash::Error),
@@ -52,8 +54,18 @@ impl User {
     }
 }
 
-fn main() {
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
     println!("Authentication module initialized.");
+
+    // Example usage of API service
+    let url = "https://www.rust-lang.org/";
+    match api_service::fetch_data(url).await {
+        Ok(data) => println!("Fetched data from {}: {}...", url, &data[..50]),
+        Err(e) => eprintln!("Error fetching data from {}: {}", url, e),
+    }
+
+    Ok(())
 }
 
 
