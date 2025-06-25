@@ -9,6 +9,7 @@ mod api_service;
 mod jwt_manager;
 mod user_manager;
 mod transaction_manager;
+mod system_settings_manager;
 
 #[derive(Debug)]
 pub enum AuthError {
@@ -140,6 +141,15 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     let alice_txns = transaction_manager.get_transactions_by_user("alice");
     println!("Alice's transactions: {:?}", alice_txns);
+
+    // Example usage of System Settings Manager
+    let mut settings_manager = system_settings_manager::SystemSettingsManager::new();
+    println!("Initial settings: {:?}", settings_manager.get_settings());
+
+    settings_manager.update_theme("light".to_string());
+    settings_manager.update_language("zh".to_string());
+    settings_manager.set_notifications_enabled(false);
+    println!("Updated settings: {:?}", settings_manager.get_settings());
 
     Ok(())
 }
