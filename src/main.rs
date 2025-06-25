@@ -6,11 +6,13 @@ use std::error::Error;
 use std::fmt;
 
 mod api_service;
+mod jwt_manager;
 
 #[derive(Debug)]
 pub enum AuthError {
     PasswordHashError(argon2::password_hash::Error),
     Other(String),
+    JwtError(jsonwebtoken::errors::Error),
 }
 
 impl fmt::Display for AuthError {
@@ -18,6 +20,7 @@ impl fmt::Display for AuthError {
         match self {
             AuthError::PasswordHashError(e) => write!(f, "Password hashing error: {}", e),
             AuthError::Other(msg) => write!(f, "Authentication error: {}", msg),
+            AuthError::JwtError(e) => write!(f, "JWT error: {}", e),
         }
     }
 }
@@ -27,6 +30,12 @@ impl Error for AuthError {}
 impl From<argon2::password_hash::Error> for AuthError {
     fn from(err: argon2::password_hash::Error) -> Self {
         AuthError::PasswordHashError(err)
+    }
+}
+
+impl From<jsonwebtoken::errors::Error> for AuthError {
+    fn from(err: jsonwebtoken::errors::Error) -> Self {
+        AuthError::JwtError(err)
     }
 }
 
@@ -63,6 +72,20 @@ async fn main() -> Result<(), Box<dyn Error>> {
     match api_service::fetch_data(url).await {
         Ok(data) => println!("Fetched data from {}: {}...", url, &data[..50]),
         Err(e) => eprintln!("Error fetching data from {}: {}", url, e),
+    }
+
+    // Example usage of JWT manager
+    let secret = b"super_secret_key";
+    let username = "testuser";
+    match jwt_manager::create_jwt(username, secret) {
+        Ok(token) => {
+            println!("Generated JWT: {}", token);
+            match jwt_manager::decode_jwt(&token, secret) {
+                Ok(claims) => println!("Decoded JWT claims: {:?}", claims),
+                Err(e) => eprintln!("Error decoding JWT: {}", e),
+            }
+        }
+        Err(e) => eprintln!("Error creating JWT: {}", e),
     }
 
     Ok(())
