@@ -7,6 +7,7 @@ use std::fmt;
 
 mod api_service;
 mod jwt_manager;
+mod user_manager;
 
 #[derive(Debug)]
 pub enum AuthError {
@@ -86,6 +87,28 @@ async fn main() -> Result<(), Box<dyn Error>> {
             }
         }
         Err(e) => eprintln!("Error creating JWT: {}", e),
+    }
+
+    // Example usage of User Manager
+    let mut user_manager = user_manager::UserManager::new();
+    let user1 = user_manager::UserProfile::new(
+        "alice".to_string(),
+        "alice@example.com".to_string(),
+        None,
+    );
+    user_manager.add_user(user1);
+
+    if let Some(user) = user_manager.get_user_by_username("alice") {
+        println!("Found user: {:?}", user);
+    }
+
+    let updated_user = user_manager::UserProfile::new(
+        "alice".to_string(),
+        "alice_new@example.com".to_string(),
+        Some("123-456-7890".to_string()),
+    );
+    if let Some(old_user) = user_manager.update_user_profile("alice", updated_user) {
+        println!("Updated user. Old profile: {:?}", old_user);
     }
 
     Ok(())
