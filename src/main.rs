@@ -1,70 +1,12 @@
-use argon2::{Argon2, PasswordHasher, PasswordVerifier};
-use argon2::password_hash::{PasswordHash, SaltString};
-use rand_core::OsRng;
-use serde::{Deserialize, Serialize};
+use pig_nation_coins_rust_backend::AuthError;
+use pig_nation_coins_rust_backend::User;
+use pig_nation_coins_rust_backend::api_service;
+use pig_nation_coins_rust_backend::jwt_manager;
+use pig_nation_coins_rust_backend::user_manager;
+use pig_nation_coins_rust_backend::transaction_manager;
+use pig_nation_coins_rust_backend::system_settings_manager;
+
 use std::error::Error;
-use std::fmt;
-
-mod api_service;
-mod jwt_manager;
-mod user_manager;
-mod transaction_manager;
-mod system_settings_manager;
-
-#[derive(Debug)]
-pub enum AuthError {
-    PasswordHashError(argon2::password_hash::Error),
-    Other(String),
-    JwtError(jsonwebtoken::errors::Error),
-}
-
-impl fmt::Display for AuthError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            AuthError::PasswordHashError(e) => write!(f, "Password hashing error: {}", e),
-            AuthError::Other(msg) => write!(f, "Authentication error: {}", msg),
-            AuthError::JwtError(e) => write!(f, "JWT error: {}", e),
-        }
-    }
-}
-
-impl Error for AuthError {}
-
-impl From<argon2::password_hash::Error> for AuthError {
-    fn from(err: argon2::password_hash::Error) -> Self {
-        AuthError::PasswordHashError(err)
-    }
-}
-
-impl From<jsonwebtoken::errors::Error> for AuthError {
-    fn from(err: jsonwebtoken::errors::Error) -> Self {
-        AuthError::JwtError(err)
-    }
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct User {
-    pub username: String,
-    pub password_hash: String,
-}
-
-impl User {
-    pub fn new(username: String, password: String) -> Result<Self, AuthError> {
-        let salt = SaltString::generate(&mut OsRng);
-        let argon2 = Argon2::default();
-        let password_hash = argon2.hash_password(password.as_bytes(), &salt)?.to_string();
-
-        Ok(User {
-            username,
-            password_hash,
-        })
-    }
-
-    pub fn verify_password(&self, password: &str) -> bool {
-        let parsed_hash = PasswordHash::new(&self.password_hash).unwrap();
-        Argon2::default().verify_password(password.as_bytes(), &parsed_hash).is_ok()
-    }
-}
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -140,7 +82,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     }
 
     let alice_txns = transaction_manager.get_transactions_by_user("alice");
-    println!("Alice's transactions: {:?}", alice_txns);
+    println!("Alice\\\\'s transactions: {:?}", alice_txns);
 
     // Example usage of System Settings Manager
     let mut settings_manager = system_settings_manager::SystemSettingsManager::new();
