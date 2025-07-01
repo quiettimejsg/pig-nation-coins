@@ -8,6 +8,7 @@ use std::fmt;
 mod api_service;
 mod jwt_manager;
 mod user_manager;
+mod transaction_manager;
 
 #[derive(Debug)]
 pub enum AuthError {
@@ -110,6 +111,35 @@ async fn main() -> Result<(), Box<dyn Error>> {
     if let Some(old_user) = user_manager.update_user_profile("alice", updated_user) {
         println!("Updated user. Old profile: {:?}", old_user);
     }
+
+    // Example usage of Transaction Manager
+    let mut transaction_manager = transaction_manager::TransactionManager::new();
+    let transaction1 = transaction_manager::Transaction::new(
+        "txn_001".to_string(),
+        "alice".to_string(),
+        100.0,
+        "USD".to_string(),
+        "deposit".to_string(),
+        Some("Initial deposit".to_string()),
+    );
+    transaction_manager.add_transaction(transaction1);
+
+    let transaction2 = transaction_manager::Transaction::new(
+        "txn_002".to_string(),
+        "alice".to_string(),
+        -50.0,
+        "USD".to_string(),
+        "withdrawal".to_string(),
+        None,
+    );
+    transaction_manager.add_transaction(transaction2);
+
+    if let Some(txn) = transaction_manager.get_transaction_by_id("txn_001") {
+        println!("Found transaction: {:?}", txn);
+    }
+
+    let alice_txns = transaction_manager.get_transactions_by_user("alice");
+    println!("Alice's transactions: {:?}", alice_txns);
 
     Ok(())
 }
